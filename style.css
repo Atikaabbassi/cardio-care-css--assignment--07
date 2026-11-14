@@ -1,0 +1,787 @@
+
+/* ================= GENERAL CSS ================= */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ================= PRELOADER ================= */
+
+.preloader {
+    height: 100vh;
+    height: 100dvh;
+    width: 100%;
+
+    background-color: #040c29;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 100000;
+
+    animation: loader-hide 0.5s ease 2s forwards;
+}
+
+
+/* Loader Content */
+
+.loader-content {
+    text-align: center;
+}
+
+
+/* Heart Animation */
+
+.loader-heart {
+    color: red;
+    font-size: 65px;
+
+    animation: heart-beat 0.5s infinite alternate;
+}
+
+@keyframes heart-beat {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+
+}
+
+
+/* ECG Animation */
+
+.ecg-line {
+    width: 300px;
+    max-width: 80vw;
+
+    margin: 25px auto;
+}
+
+.ecg-line svg {
+    width: 100%;
+    display: block;
+}
+
+.ecg-line polyline {
+    fill: none;
+    stroke: red;
+    stroke-width: 3;
+
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+
+    animation: ecg-animation 1s linear infinite;
+}
+
+@keyframes ecg-animation {
+
+    to {
+        stroke-dashoffset: 0;
+    }
+
+}
+
+
+/* Website Name */
+
+.loader-content h2 {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: serif;
+}
+
+.loader-content p {
+    color: #bfc8dc;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-top: 10px;
+}
+
+
+/* Loading Text */
+
+.loading-text {
+    color: white;
+    font-size: 14px;
+    margin-top: 20px;
+
+    animation: loading-blink 0.8s infinite alternate;
+}
+
+@keyframes loading-blink {
+
+    from {
+        opacity: 0.3;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* Hide Loader */
+
+@keyframes loader-hide {
+
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    99% {
+        opacity: 0;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+}
+
+
+/* ================= TOP BAR ================= */
+
+.orange-main {
+    min-height: 45px;
+    width: 100%;
+
+    background-color: #040c29;
+    color: white;
+
+    padding: 10px 20px;
+}
+
+.orange {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.orange p {
+    margin: 0;
+}
+
+.emergency-dot {
+    font-size: 0.5em;
+    color: red;
+}
+
+.emergency-text {
+    color: red;
+    font-weight: 600;
+}
+
+.spn {
+    font-weight: 500;
+}
+
+.spn:hover {
+    color: red;
+}
+
+.none {
+    color: grey;
+}
+
+
+/* ================= NAVBAR ================= */
+
+nav.navbar {
+    position: sticky !important;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 9999;
+
+    background-color: white !important;
+
+    padding: 12px 20px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.navbar-nav {
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+    font-weight: bold;
+}
+
+nav .nav-link {
+    color: #222 !important;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background-color: red;
+
+    transition: width 0.4s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* Logo  ==============================================================*/
+
+.icon-box-heart {
+    height: 40px;
+    width: 40px;
+
+    background-color: red;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+}
+
+.heart-i {
+    font-size: 1.5em;
+    color: white;
+}
+
+
+/* Appointment Button ====================================================== */
+
+.btn- {
+    width: 230px;
+    min-height: 45px;
+
+    background-color: red;
+    border-radius: 20px;
+
+    color: white !important;
+    font-weight: 700;
+
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.btn-::after {
+    display: none;
+}
+
+.btn-:hover {
+    background-color: #040c29;
+}
+
+
+/* ================= BACK TO TOP ================= */
+
+.top-icon {
+    position: fixed;
+
+    bottom: 30px;
+    right: 30px;
+
+    width: 40px;
+    height: 40px;
+
+    background-color: rgb(228, 18, 18);
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    font-size: 25px;
+
+    z-index: 999;
+}
+
+.top-icon i {
+    font-size: 1.1em;
+}
+
+
+/* ================= HERO SECTION =================  ==================================*/
+
+.hero-section {
+    width: 100%;
+}
+
+.heading-one{
+    font-family: "Orbitron", sans-serif !important;
+    margin-bottom: 1em;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+
+
+.hero-bg-img {
+    background-image: url("./asstes/bg-img.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 555px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-parent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+
+    padding: 50px 30px;
+}
+
+.hero-child-box {
+    width: 50%;
+    color: white;
+    padding: 10px 16px;
+}
+
+
+/* Hero Badges ========================================*/
+
+.input-box-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 0.5em;
+    font-family: serif;
+    font-weight: 600;
+}
+.input-child {
+    width: fit-content;
+    min-height: 30px;
+    background-color: rgba(128, 0, 128, 0.301);
+    border-radius: 25px;
+    border: 1px solid rgb(202, 202, 202);
+    text-align: center;
+    padding: 5px 15px;
+    font-size: 14px;
+}
+
+
+.btn-parent{
+    display: flex;
+    gap: 10px;
+}
+
+.flex-btns-{
+    width: 240px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+  
+    border: 1px soild white;
+}
+
+.hover-btn{
+    background-color: #22222239;
+
+}
+
+.hover-btn:hover{
+    background-color: #22222272;
+}
+.number-main{
+    display: flex;
+    gap: 20px;
+    margin-top: 2em;
+    
+}
+.number-main h3{
+    
+     font-family: "Orbitron", sans-serif !important;
+}
+.number-main p{
+    font-size: 0.9em;
+}
+
+
+ /* red line css ================================ */
+
+.red-line-main{
+    background-color: rgb(129, 8, 8);
+   
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: white;
+   
+}
+.heading-five{
+   font-family: serif;
+}
+
+.width{
+    background-color:white;
+    color: red;
+    width: 270px;
+    
+}
+
+
+.red-icon {
+    color: red;
+}
+
+.green-icon {
+    color: green;
+}
+
+.patient-care {
+    margin-top: 5px;
+}
+
+
+/* Hero Heading */
+
+.hero-child-box h1 {
+    font-family: serif;
+    font-weight: bold;
+
+    font-size: clamp(35px, 4vw, 58px);
+    line-height: 1.2;
+
+    margin-top: 10px;
+}
+
+.red-heading {
+    color: red;
+}
+
+
+/* Right Side  ============================================================*/
+
+
+.hero-right {
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8em !important;
+}
+
+.hero-transpret-child {
+    height: 400px;
+    width: 400px;
+    background: linear-gradient(135deg, #473b4b, #9b4149);
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 65%;
+    overflow: hidden;
+}
+
+.hero-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Heart Rate Box */
+
+.heart-rate {
+    position: absolute;
+    top: -15px;
+    left: -45px;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    box-shadow: 0 5px 20px #0002;
+}
+
+.heart-rate i {
+    color: #e46b6b;
+    font-size: 19px;
+}
+
+.heart-rate h3,
+.consultation h3 {
+    font-size: 16px;
+    margin: 0;
+    color: #343a40;
+}
+
+.heart-rate p,
+.consultation p {
+    margin: 5px 0 0;
+    color: #929292;
+    font-size: 12px;
+}
+
+/* Consultation Box */
+
+.consultation {
+    position: absolute;
+    bottom: -15px;
+    right: -25px;
+    background: white;
+   padding: 10px 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 20px #0002;
+}
+
+.consultation i {
+    color: #65b987;
+    font-size: 19px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= EXTRA SECTIONS ================= */
+
+.demo-section {
+    width: 100%;
+    min-height: 250px;
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+    background-color: #f8f9fa;
+}
+
+.demo-section:nth-of-type(even) {
+    background-color: white;
+}
+
+.demo-section h2 {
+    color: #040c29;
+    font-family: serif;
+}
+
+
+/* ================= TABLET RESPONSIVE ================= */
+
+@media (max-width: 991px) {
+
+    .navbar-nav {
+        gap: 5px;
+        padding-top: 15px;
+    }
+
+    .btn- {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .hero-parent {
+        padding: 40px 20px;
+    }
+
+    .hero-child-box {
+        width: 100%;
+    }
+    .red-line-main{
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .width{
+        width: 100%;
+    }
+
+
+}
+
+/* 1000 media */
+
+@media(max-width:1060px){
+   .hero-parent{
+    flex-direction: column;
+   }
+}
+
+
+
+
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+
+@media (max-width: 576px) {
+
+    .orange-main {
+        padding: 10px;
+    }
+
+    .orange {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .orange p {
+        font-size: 12px;
+    }
+
+    .none {
+        font-size: 11px !important;
+    }
+
+
+    /* Navbar */
+
+    nav.navbar {
+        padding: 10px;
+    }
+
+    .navbar-nav {
+        gap: 3px;
+    }
+
+
+    /* Hero */
+
+    .hero-bg-img {
+        min-height: 500px;
+        background-position: center;
+    }
+
+    .hero-parent {
+        padding: 35px 15px;
+    }
+
+    .hero-child-box {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .input-box-main {
+        gap: 8px;
+        margin-top: 1em;
+    }
+
+    .input-child {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+
+    .hero-child-box h1 {
+        font-size: 35px;
+    }
+
+    .top-icon {
+        bottom: 20px;
+        right: 15px;
+    }
+    .btn-parent{
+        flex-direction: column;
+    }
+    .flex-btns-{
+        width: 100%;
+
+    }
+    .number-main{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-transpret-child{
+        width: 100%;
+
+    }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 360px) {
+
+    .hero-child-box h1 {
+        font-size: 30px;
+    }
+
+    .loader-content h2 {
+        font-size: 27px;
+    }
+
+}
