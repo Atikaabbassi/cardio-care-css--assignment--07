@@ -248,16 +248,12 @@ nav .nav-link {
 
 nav a::after {
     content: "";
-
     position: absolute;
     left: 0;
     bottom: 0;
-
     width: 0;
     height: 2px;
-
     background-color: red;
-
     transition: width 0.4s ease;
 }
 
@@ -627,14 +623,144 @@ nav a:hover::after {
     background-color: #f8f9fa;
 }
 
-.demo-section:nth-of-type(even) {
-    background-color: white;
+/* section aboutus  ===================================================================== */
+
+.main-blue-box {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 350px;
+    height: auto;
+    background-color: #040c29;
+    margin: 30px auto;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.demo-section h2 {
-    color: #040c29;
-    font-family: serif;
+.form-parent {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 0;
+    gap: 10px;
 }
+
+.form-child {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.input-line {
+    width: 100%;
+    max-width: 350px;
+    height: 45px;
+    background-color: #292b3e;
+    text-indent: 1em;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.input-line::placeholder {
+    color: white;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .main-blue-box {
+        width: 95%;
+    }
+
+    .form-child {
+        flex: 1 1 calc(50% - 10px);
+    }
+
+    .input-line {
+        max-width: 100%;
+    }
+}
+
+
+@media (max-width: 1200px){
+
+
+    .main-blue-box{
+    height: auto;
+    width: 800px;
+    border-radius: 30px;
+     gap: 0;
+    }
+    .form-parent{
+        flex-direction: column;
+        justify-content: center;
+       
+
+    }
+    .form-child{
+        width: 100%;
+         justify-content: center;
+        text-align: center;
+          align-items: center;
+    }
+    .input-line{
+    
+        width: 95%;
+         
+    }
+}
+
+
+
+/* Mobile */
+@media (max-width: 600px) {
+    .main-blue-box {
+        width: 95%;
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .form-parent {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-child {
+        width: 100%;
+        flex: 1 1 100%;
+        height: auto;
+        padding: 12px 5px;
+    }
+
+    .input-line {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .demo-section h2 {
+        font-size: 24px;
+    }
+
+    .demo-section p {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+
+    .demo-section p br {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
 
 
 /* ================= TABLET RESPONSIVE ================= */
