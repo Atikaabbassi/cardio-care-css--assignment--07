@@ -2427,7 +2427,8 @@ justify-content: center;
 }
 
 .faq-item:hover .question {
-    background-color: #d9ed35;
+    background-color: red;
+  font-weight: bold;
 }
 
 .faq-item:hover .icon {
