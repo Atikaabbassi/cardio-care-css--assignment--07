@@ -2562,6 +2562,12 @@ justify-content: center;
         width: 100%;
         margin-top: 12px;
     }
+    .red-main-box{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
 
     .hero-parent {
         padding: 40px 20px;
